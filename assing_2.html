@@ -1,0 +1,27 @@
+<!DOCTYPEhtml>
+    <html>
+
+    <head>
+        <metacharset="utf-8">
+            <metaname="viewport"content="width=device-width">
+                <title>Function Binding</title>
+    </head>
+
+    <body>
+        <h2>Function binding</h2>
+        <p id="demo"></p>
+        <script>
+            const employee = {
+                firstName: "Bruce",
+                lastName: "Lee",
+                display: function () {
+                    let x = document.getElementById("demo");
+                    x.innerHTML = this.firstName + " " + this.lastName;
+                }
+            }
+            let display = employee.display.bind(employee);
+            setTimeout(display, 3000);
+        </script>
+    </body>
+
+    </html>
